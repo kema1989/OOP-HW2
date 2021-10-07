@@ -9,6 +9,35 @@ namespace OOP_HW2
         {
             Helicopter helicopter = new Helicopter();
             //Console.WriteLine(FindVariant("Абдрашид"));
+            try
+            {
+                Helicopter.Greetings();
+                Console.WriteLine("Купить вертолет: новый - 1, б/у - 2, суперстарый - 3");
+                
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Helicopter heli1 = new Helicopter(OOP_HW2.Type.New);
+                        heli1.Start();
+                        break;
+                    case "2":
+                        Helicopter heli2 = new Helicopter(OOP_HW2.Type.Used);
+                        heli2.Start();
+                        break;
+                    case "3":
+                        Helicopter heli3 = new Helicopter(OOP_HW2.Type.New);
+                        heli3.Start();
+                        break;
+                    default:
+                        Console.WriteLine("Вы нормально даже не смогли сделать выбор...(((");
+                        break;
+                }
+                
+            }
+            catch(Exception)
+            {
+
+            }
         }
 
         public static int FindVariant(string line)
